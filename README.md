@@ -20,5 +20,5 @@ python app.py -i test_video.mp4 -m ./models/ssd_mobilenet.xml -ct 0.6 -c GREEN
 
 ## Example output 
 <video width="320" height="240" controls>
-  <source src="output.mp4" type="video/mp4">
+  <source src="out.mp4" type="video/mp4">
 </video>
