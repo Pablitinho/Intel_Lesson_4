@@ -10,3 +10,6 @@ ions_config .\extensions\front\tf\ssd_support.json --model_name D:\Courses\Intel
 
 
 python app.py -i test_video.mp4 -m ./models/ssd_mobilenet.xml -ct 0.6 -c GREEN
+
+
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](./out.mp4)
