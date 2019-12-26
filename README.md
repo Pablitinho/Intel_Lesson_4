@@ -20,14 +20,4 @@ python app.py -i test_video.mp4 -m ./models/ssd_mobilenet.xml -ct 0.6 -c GREEN
 
 ## Example output 
 
-<video>
-  <source type="video/mp4" src="out.mp4">
-  <p>Your browser does not support the video element.</p>
-</video>
-
-
-<div class="myvideo">
-   <video  style="display:block; width:100%; height:auto;" autoplay controls loop="loop">
-       <source src="{{ site.baseurl }}/out.mp4" type="video/mp4" />
-   </video>
-</div>
+![Ouput Demo](ouput.gif)
