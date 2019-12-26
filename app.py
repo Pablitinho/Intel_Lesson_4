@@ -1,6 +1,7 @@
 import argparse
 import cv2
 from inference import Network
+import time
 
 INPUT_STREAM = "test_video.mp4"
 #CPU_EXTENSION = "/opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so"
@@ -50,7 +51,6 @@ def convert_color(color_string):
         return out_color
     else:
         return colors['BLUE']
-
 
 def draw_boxes(frame, result, args, width, height):
     '''
@@ -104,10 +104,14 @@ def infer_on_video(args):
         p_frame = p_frame.transpose((2, 0, 1))
         p_frame = p_frame.reshape(1, *p_frame.shape)
         ### TODO: Perform inference on the frame
+		
+        start = time.time()
         plugin.async_inference(p_frame)
         ### TODO: Get the output of inference
         if plugin.wait() == 0:
             result = plugin.extract_output()
+            end = time.time()
+            print("ms: ", (end - start)*1000.0)
             ### Update the frame to include detected bounding boxes
             frame = draw_boxes(frame, result, args, width, height)
             # Write out the frame
