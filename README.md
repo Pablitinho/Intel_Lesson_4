@@ -19,11 +19,15 @@ ions_config .\extensions\front\tf\ssd_support.json --model_name D:\Courses\Intel
 python app.py -i test_video.mp4 -m ./models/ssd_mobilenet.xml -ct 0.6 -c GREEN
 
 ## Example output 
-<video width="320" height="240" controls>
-  <source src="out.mp4" type="video/mp4">
+
+<video>
+  <source type="video/mp4" src="out.mp4">
+  <p>Your browser does not support the video element.</p>
 </video>
 
 
-
-
-![](out.mp4)
+<div class="myvideo">
+   <video  style="display:block; width:100%; height:auto;" autoplay controls loop="loop">
+       <source src="{{ site.baseurl }}/out.mp4" type="video/mp4" />
+   </video>
+</div>
